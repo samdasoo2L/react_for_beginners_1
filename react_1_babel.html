@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script
+    crossorigin
+    src="https://unpkg.com/react@18/umd/react.production.min.js"
+  ></script>
+  <script
+    crossorigin
+    src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+  ></script>
+  <script src="http://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    const root = document.getElementById("root");
+    const Title = () => (
+      <h3 id="title" onMouseEnter={() => console.log("mouse enter")}>
+        Hello I'm a title
+      </h3>
+    );
+    // const Title = React.createElement(
+    //   "h3",
+    //   {
+    //     onMouseEnter: () => console.log("mouse enter"),
+    //   },
+    //   "Hello I'm a span"
+    // );
+    const Button = () => (
+      <button
+        style={{ backgroundColor: "tomato" }}
+        onClick={() => console.log("im clicked")}
+      >
+        Click me
+      </button>
+    );
+    // const btn = React.createElement(
+    //   "button",
+    //   {
+    //     onClick: () => console.log("im cliked"),
+    //   },
+    //   "Click me"
+    // );
+
+    // JSX로 쓸 테그이름은 반드시 대문자로 시작해야된다! 최 중 요 !!!
+    const Container = (
+      <div>
+        <Title />
+        <Button />
+      </div>
+    );
+    // const Container = React.createElement("div", null, [Title, Button]);
+    ReactDOM.render(Container, root);
+  </script>
+</html>
